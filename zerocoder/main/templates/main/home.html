@@ -1,0 +1,43 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<div class="container mt-4 section bg-light">
+    <div class="jumbotron">
+        <h1 class="display-4">Добро пожаловать на Django!</h1>
+        <p class="lead">Мы рады видеть вас здесь. Ознакомьтесь с нашими услугами и узнайте больше о том, что мы предлагаем.</p>
+        <hr class="my-4">
+        <p>Наша цель — предоставлять лучшие услуги нашим клиентам. Посетите наш сайт, чтобы узнать больше.</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'services' %}" role="button">Наши услуги</a>
+    </div>
+
+    <!-- Отзывы клиентов -->
+    <h2 class="mt-5">Отзывы наших клиентов</h2>
+    <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0">Отличный сервис и профессиональный подход. Рекомендую!</p>
+                    <footer class="blockquote-footer">Екатерина С.</footer>
+                </blockquote>
+            </div>
+            <div class="carousel-item">
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0">Качественная работа и быстрая доставка. Очень доволен!</p>
+                    <footer class="blockquote-footer">Михаил П.</footer>
+                </blockquote>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Следующий</span>
+        </button>
+    </div>
+</div>
+{% endblock %}

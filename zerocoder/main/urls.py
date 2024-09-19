@@ -1,12 +1,13 @@
-from django.conf import settings
-from django.conf.urls.static import static
-from django.urls import path, include
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='home'),
-    path('new', views.new, name='page2'),
+    # Главная страница
+    path('', views.home, name='home'),
+    # Страница "О нас"
     path('about/', views.about, name='about'),
+    # Страница "Наши услуги"
     path('services/', views.services, name='services'),
+    # Страница "Контакты"
     path('contact/', views.contact, name='contact'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]

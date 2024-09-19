@@ -1,0 +1,66 @@
+/* Основной цвет фона для секций */
+        .section {
+            padding: 40px 0;
+        }
+
+        /* Тень для карточек */
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Эффект увеличения и тени при наведении */
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Тени и скругление для изображений */
+        .rounded-circle {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Цвета для заголовков */
+        h1, h2, h3 {
+            color: #343a40;
+        }
+
+        /* Плавная анимация при наведении на изображения */
+        .zoom-effect {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .zoom-effect:hover {
+            transform: scale(1.05);
+        }
+
+        /* Темный стиль для кнопок карусели */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+        }
+
+        /* Инвертирование цвета кнопок карусели */
+        .carousel-control-prev,
+        .carousel-control-next {
+            filter: invert(1);
+        }
+
+        /* Отступы и стили для цитат в карусели */
+        .carousel-inner blockquote {
+            margin: 20px 50px; /* Внешние отступы */
+            padding: 20px; /* Внутренние отступы */
+            background-color: #f8f9fa; /* Легкий фон */
+            border-radius: 5px; /* Округление углов */
+        }
+
+        /* Отступ между текстом цитаты и автором */
+        .carousel-inner .blockquote-footer {
+            margin-top: 10px;
+        }
+
+        /* Центрирование текста внутри карусели */
+        .carousel-inner .carousel-item {
+            text-align: center;
+        }

@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Контакты</h1>
+    <p>Если у вас есть вопросы или нужна дополнительная информация, пожалуйста, свяжитесь с нами.</p>
+    {% if request.GET.success %}
+    <div class="alert alert-success" role="alert">
+        Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.
+    </div>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Имя</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Ваше имя">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Электронная почта</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Ваш email">
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Сообщение</label>
+            <textarea class="form-control" id="message" name="message" rows="3" placeholder="Ваше сообщение"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+</div>
+{% endblock %}

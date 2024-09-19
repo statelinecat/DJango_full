@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}О нас{% endblock %}
+
+{% block content %}
+<div class="container mt-4 section bg-light">
+    <!-- Информация о компании -->
+    <h1>О нас</h1>
+    <p>На MySite мы стремимся предоставлять качественные услуги, которые превосходят ожидания наших клиентов.</p>
+    <p>Наша команда стремится к постоянному совершенствованию и предоставлению ценности в каждом взаимодействии. Наша миссия — быть лидером в нашей отрасли, устанавливая стандарты удовлетворенности клиентов и операционной эффективности.</p>
+
+    <!-- Команда -->
+    <h2 class="mt-5">Наша команда</h2>
+    <div class="row">
+        <!-- Первый сотрудник -->
+        <div class="col-md-4 text-center mb-4">
+            <img src="{% static 'img/ivanov.webp' %}" class="rounded-circle zoom-effect" alt="Сотрудник 1" width="140" height="140">
+            <h3>Иван Иванов</h3>
+            <p>Руководитель отдела продаж.</p>
+        </div>
+        <!-- Второй сотрудник -->
+        <div class="col-md-4 text-center mb-4">
+            <img src="{% static 'img/petrova.webp' %}" class="rounded-circle zoom-effect" alt="Сотрудник 2" width="140" height="140">
+            <h3>Мария Петрова</h3>
+            <p>Менеджер по работе с клиентами.</p>
+        </div>
+        <!-- Третий сотрудник -->
+        <div class="col-md-4 text-center mb-4">
+            <img src="{% static 'img/smirnov.webp' %}" class="rounded-circle zoom-effect" alt="Сотрудник 3" width="140" height="140">
+            <h3>Алексей Смирнов</h3>
+            <p>Технический специалист.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

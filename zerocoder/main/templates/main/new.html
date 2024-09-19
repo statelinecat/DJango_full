@@ -1,10 +1,16 @@
-{% extends 'main/layoute.html' %}
+{% extends 'main/base.html' %}
+{% load static %}
 
-{% block title %}
-    <title>Вторая страничка </title>
-{% endblock %}
+{% block title %}Главная{% endblock %}
 
-{% block content%}
-    {% include 'main/nav.html'%}
-    <h4>Это вторая страница сайта по уроку номер 2</h4>
+{% block content %}
+<div class="container mt-4 section bg-light">
+    <div class="jumbotron">
+        <h1 class="display-4">Добро пожаловать на Django2!</h1>
+        <p class="lead">Мы рады видеть вас здесь. Ознакомьтесь с нашими услугами и узнайте больше о том, что мы предлагаем.</p>
+        <hr class="my-4">
+        <p>Наша цель — предоставлять лучшие услуги нашим клиентам. Посетите наш сайт, чтобы узнать больше.</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'services' %}" role="button">Наши услуги</a>
+    </div>
+</div>
 {% endblock %}

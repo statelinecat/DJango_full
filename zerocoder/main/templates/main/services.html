@@ -1,0 +1,46 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Наши услуги{% endblock %}
+
+{% block content %}
+<div class="container mt-4 section">
+    <!-- Заголовок и описание услуг -->
+    <h1>Наши услуги</h1>
+    <p>Мы предлагаем широкий спектр услуг, предназначенных для удовлетворения потребностей наших клиентов.</p>
+
+    <!-- Карточки услуг -->
+    <div class="row">
+        <!-- Первая услуга -->
+        <div class="col-md-4">
+            <div class="card mb-4 zoom-effect">
+                <img src="{% static 'img/audit.webp' %}" class="card-img-top" alt="Услуга 1">
+                <div class="card-body">
+                    <h5 class="card-title">Услуга 1</h5>
+                    <p class="card-text">Описание услуги 1. Высокое качество и надежность — наши отличительные черты.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Вторая услуга -->
+        <div class="col-md-4">
+            <div class="card mb-4 zoom-effect">
+                <img src="{% static 'img/trainer.webp' %}" class="card-img-top" alt="Услуга 2">
+                <div class="card-body">
+                    <h5 class="card-title">Услуга 2</h5>
+                    <p class="card-text">Описание услуги 2. Мы гарантируем удовлетворенность клиентов на каждом этапе.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Третья услуга -->
+        <div class="col-md-4">
+            <div class="card mb-4 zoom-effect">
+                <img src="{% static 'img/hat.webp' %}" class="card-img-top" alt="Услуга 3">
+                <div class="card-body">
+                    <h5 class="card-title">Услуга 3</h5>
+                    <p class="card-text">Описание услуги 3. Качество и совершенство в каждой детали.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
