@@ -1,0 +1,11 @@
+{% extends 'main/base.html' %}
+{% block title %} {{ news.title }} {% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ news.title }}</h1>
+    <p>{{ news.text }}</p>
+    <p><small>Опубликовано: {{ news.pub_date }}</small></p>
+    <p><small>Опубликовал: {{news.user}}</small></p>
+</div>
+{% endblock %}

@@ -6,20 +6,29 @@
 {% endblock %}
 
 {% block content %}
-<div class="container mt-4 section">
-    <!-- Заголовок -->
-    <h1>Наши новости</h1>
-    {% for news in news %}
-        <div>
-            <h3>{{ news.title }}</h3>
-            <p>{{ news.short_description }}</p>
-            <p>{{ news.text }}</p>
-            <p>{{ news.pub_date }}</p>
-            <p>{{ news.user }}</p>
+<div class="container mt-5">
+    <!-- Заголовок страницы -->
+    <h1 class="text-center mb-5">Наши новости</h1>
 
-
+    <!-- Блок новостей -->
+    <div class="row">
+        {% if news %}
+            {% for news in news %}
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ news.title }}</h5>
+                        <p class="card-text">{{ news.short_description }}</p>
+                        <a href="{% url 'news_detail' news.id %}" class="btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+        <div class="col text-center">
+            <h4>Новостей пока нет</h4>
         </div>
-    {% endfor %}
-
+        {% endif %}
+    </div>
 </div>
 {% endblock %}
