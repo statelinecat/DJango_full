@@ -7,7 +7,19 @@
 
 {% block content %}
 <div class="container mt-4 section">
-    <!-- Заголовок и описание услуг -->
+    <!-- Заголовок -->
     <h1>Наши новости</h1>
+    {% for news in news %}
+        <div>
+            <h3>{{ news.title }}</h3>
+            <p>{{ news.short_description }}</p>
+            <p>{{ news.text }}</p>
+            <p>{{ news.pub_date }}</p>
+            <p>{{ news.user }}</p>
+
+
+        </div>
+    {% endfor %}
+
 </div>
 {% endblock %}

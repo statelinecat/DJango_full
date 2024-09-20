@@ -94,7 +94,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
@@ -108,7 +108,7 @@ USE_TZ = True
 
 # Настройки статических файлов (CSS, JavaScript, изображения)
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'myapp/static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'main/static')]
 # Настройки медиа-файлов (загружаемые пользователем)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
