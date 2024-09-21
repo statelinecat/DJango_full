@@ -1,15 +1,12 @@
 from django import forms
-from .models import news_post
-from django.forms import ModelForm, TextInput, Textarea, DateInput
+from .models import NewsPost
 
-class news_postForm(forms.ModelForm):
+class NewsPostForm(forms.ModelForm):
     class Meta:
-        model = news_post
-        fields = ['title', 'short_description', 'text', 'pub_date']
+        model = NewsPost
+        fields = ['title', 'short_description', 'text']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Заголовок новости'}),
-            'short_description': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Краткое описание новости'}),
+            'short_description': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Краткое описание новости'}),
             'text': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Новость'}),
-            'pub_date': forms.DateInput(attrs={'class': 'form-control', 'type': 'date', 'placeholder':'Дата публикации'}),
         }
-

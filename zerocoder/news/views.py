@@ -1,24 +1,30 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .forms import news_postForm
-from .models import news_post
-
+from django.contrib.auth.decorators import login_required
+from .forms import NewsPostForm
+from .models import NewsPost
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import AuthenticationForm
 
 def home(request):
-    news = news_post.objects.all()
+    news = NewsPost.objects.all()
     return render(request, "news/news.html", {"news": news})
 
 def news_detail(request, id):
-    news = get_object_or_404(news_post, id=id)
+    news = get_object_or_404(NewsPost, id=id)
     return render(request, 'news/news_detail.html', {'news': news})
 
+@login_required
 def create_news(request):
     error = ""
     if request.method == 'POST':
-        form = news_postForm(request.POST)
+        form = NewsPostForm(request.POST)
         if form.is_valid():
-            form.save()
+            news = form.save(commit=False)
+            news.user = request.user
+            news.save()
             return redirect('news_home')
         else:
             error = "Форма заполнена неверно"
-    form = news_postForm()
+
+    form = NewsPostForm()
     return render(request, 'news/add_news.html', {'form': form, 'error': error})

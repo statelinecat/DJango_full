@@ -114,3 +114,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Установка поля для идентификаторов моделей по умолчанию
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
