@@ -13,5 +13,5 @@ class NewsPost(models.Model):
 
     class Meta:
         verbose_name = 'Новость'
-        verbose_name_plural = 'Новости'
+        verbose_name_plural = 'Новость'
         ordering = ['-pub_date']
